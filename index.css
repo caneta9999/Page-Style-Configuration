@@ -1,0 +1,40 @@
+html{
+    font-family:Arial, Helvetica, sans-serif
+}
+.grade{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+aside,section{
+    text-align: center;
+}
+aside{
+    background-color: #e2cbde;
+    padding: 10px;
+}
+section{
+    background-color: #d2cbde;
+}
+#inputCorFundo,#inputCorFonte, #outputTamanhoFonte, #selectFonte{
+ margin-bottom: 25px;
+}
+
+#result {
+    padding: 2px;
+ }
+ #result ul {
+    list-style-type: none;
+    padding: 0;
+ }
+ #result ul li {
+    padding: 2px 0;
+ }
+ #result ul li:hover {
+	transition: 1s;
+    background: #fff;
+ }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Page Style Configuration</title>
+</head>
+<body>
+    <div class = "grade">
+        <aside>
+            <h2> Defina aqui as configurações</h2>
+            <label for="inputCorFundo">Cor do fundo: </label><input class="form-control" id="inputCorFundo" onChange="mudarCorFundo()" type="color" value="#d2cbde"/> 
+            <br/>
+            <label for="inputCorFonte">Cor da fonte: </label><input class="form-control" id="inputCorFonte" onChange="mudarCorFonte()" type="color" value="#000000"/> 
+            <br/>
+            <label for="inputTamanhoFonte">Tamanho da fonte:</label> <input class="form-control" id="inputTamanhoFonte" onChange="mudarTamanhoFonte()" type="range" value="24" min="10" max="50" oninput="this.nextElementSibling.value = this.value"/>
+            <output id="outputTamanhoFonte">24</output>
+            <br/>
+            <label for="selectFonte"> Selecione a fonte: </label>
+            <select id="selectFonte" class="form-control" onChange="mudarFonte()" name="select">
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Georgia">Georgia</option> 
+                <option value="Monospace">Monospace</option>  
+            </select>
+            <br/>
+            <label for="checkboxTitulo">Titulos: </label><input class="form-control" id="checkboxTitulo" type="checkbox" onChange="ligarTitulos()" checked>
+        </aside>
+        <section id="sectionPrincipal">
+            <h1 id="titulo1"> Page Style Configuration </h1>
+            <h2 id="titulo2"> Aqui irá aparecer as mudanças! </h2>
+        </section>
+    </div>
+    <script> 
+        function mudarCorFundo(){
+            var cor = document.getElementById('inputCorFundo').value;
+            document.getElementById('sectionPrincipal').style.backgroundColor = cor; 
+        }
+        function mudarCorFonte(){
+            var cor = document.getElementById('inputCorFonte').value;
+            document.getElementById('titulo1').style.color = cor;
+            document.getElementById('titulo2').style.color = cor;
+        }
+        function mudarTamanhoFonte(){
+            var tamanho = document.getElementById('inputTamanhoFonte').value;
+            document.getElementById('titulo1').style.fontSize = tamanho + "px";
+            document.getElementById('titulo2').style.fontSize = tamanho + "px";
+        }
+        function mudarFonte(){
+            var fonte = document.getElementById('selectFonte').value;
+            document.getElementById('titulo1').style.fontFamily = fonte;
+            document.getElementById('titulo2').style.fontFamily = fonte;
+        }
+        function ligarTitulos(){
+            var titulo = document.getElementById('checkboxTitulo').checked;
+            document.getElementById('titulo1').style.display = titulo?'block':'none';
+            document.getElementById('titulo2').style.display = titulo?'block':'none';
+        }
+    </script>
+</body>
+</html>
